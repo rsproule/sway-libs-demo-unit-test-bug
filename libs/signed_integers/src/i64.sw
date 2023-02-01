@@ -158,3 +158,19 @@ impl core::ops::Divide for I64 {
         res
     }
 }
+
+#[test]
+fn test_add() {
+    // note this is identical code from the tests in `../../tests/src/signed_integers/signed_i64/src/main.sw`
+    // this should not fail, but does if you run `forc test`
+    let one = I64::from(1u64);
+    let mut res = one + I64::from(1u64);
+    assert(res == I64::from(2u64));
+}
+
+#[test]
+fn test_nothing() {
+    // this test doest fail because it doesn't do any addition. 
+    // its hard to debug further without some debug tools 
+    let one = I64::from(1u64);
+}
